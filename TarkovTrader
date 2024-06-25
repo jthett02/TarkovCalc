@@ -1,0 +1,24 @@
+def calculate_min_starting_money(item_cost, sell_price, current_spent, target_spent):
+    # Calculate the net cost of one transaction (buying and selling one item)
+    net_cost_per_transaction = item_cost - sell_price
+
+    # Calculate the remaining amount needed to reach the target
+    remaining_amount = target_spent - current_spent
+
+    # Calculate the number of transactions needed to reach the target amount
+    import math
+    num_transactions = math.ceil(remaining_amount / net_cost_per_transaction)
+
+    # Calculate the minimum starting money needed
+    min_starting_money = num_transactions * item_cost
+
+    return min_starting_money
+
+# Example usage:
+item_cost = 1000   # cost to buy the item
+sell_price = 700   # price when selling the item back
+current_spent = 5000  # current amount spent with the trader
+target_spent = 20000  # target amount to be spent with the trader
+
+min_starting_money = calculate_min_starting_money(item_cost, sell_price, current_spent, target_spent)
+print(f"You need at least {min_starting_money} rubles to start.")
