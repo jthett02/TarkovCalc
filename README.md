@@ -4,3 +4,6 @@ Math is done ✅
 
 Have made the API Query 
 Need to make parsing script
+
+
+Made the CSV file creator
